@@ -1,0 +1,31 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    public static void printSubsequence(String input,String outputSoFar){
+        
+        if(input.length()==0){
+            
+            System.out.println(outputSoFar);
+            return ;
+        }
+        
+        printSubsequence(input.substring(1),outputSoFar);
+        
+        printSubsequence(input.substring(1),outputSoFar+input.charAt(0));
+    }
+    public static void printSubsequence(String input){
+        
+        printSubsequence(input,"");
+    }
+	public static void main (String[] args) 
+	{
+	   
+	   printSubsequence("xy");
+	}
+}
